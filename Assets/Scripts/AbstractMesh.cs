@@ -4,12 +4,14 @@ using UnityEngine;
 
 public abstract class AbstractMesh : MonoBehaviour {
 
-    public int lengthOfSingleFigure;
+    public float lengthOfSingleFigure;
     public int numberOfFigures;
-
+    
    protected int[] triangles;
     protected Vector3[] vertices;
     protected Vector3 origin;
+
+    
    protected Mesh mesh;
         
     private void Awake()
