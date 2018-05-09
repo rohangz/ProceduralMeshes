@@ -3,7 +3,7 @@
     <Files>
       <File FileName="Assets/Scripts/OptimizedGrid.cs" Line="14" Column="44" />
       <File FileName="Assets/Scripts/AbstractMesh.cs" Line="14" Column="5" />
-      <File FileName="Assets/Scripts/Circle.cs" Line="24" Column="5" />
+      <File FileName="Assets/Scripts/Circle.cs" Line="31" Column="59" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
