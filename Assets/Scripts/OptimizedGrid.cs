@@ -7,12 +7,72 @@ public class OptimizedGrid : AbstractMesh
 {
     public int minRandomInteger;
     public int maxRandomInteger;
+
+    [SerializeField]
+    private float speed;
+    private void OnCollisionEnter(Collision col)
+    {
+        Debug.Log("Collision");
+    }
     private void Start()
     {
         mesh = gameObject.GetComponent<MeshFilter>().mesh;
         origin = gameObject.transform.position;
         GenerateMesh(numberOfFigures, lengthOfSingleFigure);
-            
+        StartCoroutine(VibrateMesh(5));
+        StartCoroutine(VibrateMesh(30));
+        StartCoroutine(VibrateMesh(61));
+        StartCoroutine(VibrateMesh(75));
+      
+    }
+    
+    IEnumerator VibrateMesh(int index)
+    {
+        bool up = true;
+        int i1, i2, i3, i4;
+        i1 = index;
+        i2 = i1 + 1;
+        i3 = index + numberOfFigures + 1;
+        i4 = i3 + 1;
+        while (true)
+        {
+            if(up)
+            {
+                vertices[i1].y += Time.deltaTime * speed;
+                vertices[i2].y += Time.deltaTime * speed;
+                vertices[i3].y += Time.deltaTime * speed;
+                vertices[i4].y += Time.deltaTime * speed;
+                if (vertices[i1].y >= 10)
+                    up = false;
+                
+            }
+            else
+            {
+                vertices[i1].y -= Time.deltaTime * speed;
+                vertices[i2].y -= Time.deltaTime * speed;
+                vertices[i3].y -= Time.deltaTime *speed;
+                vertices[i4].y -= Time.deltaTime * speed;
+                if (vertices[i1].y <= -10)
+                    up = true;
+            }
+            SetMesh();
+            yield return null;
+        }
+    }
+    public void changeMesh()
+    {
+        int randomIndex = Random.RandomRange(numberOfFigures,numberOfFigures+10);
+        int randomIndex2 = randomIndex+1;
+        int randomIndex3 = randomIndex + numberOfFigures + 1;
+        int randomIndex4 = randomIndex3+1;  
+        vertices[randomIndex].y = vertices[randomIndex2].y = vertices[randomIndex3].y = vertices[randomIndex4].y = 9f;
+        SetMesh();
+    }
+    protected void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+            changeMesh();
+       
     }
     protected Vector3[] SetVertices(int figures,float length)
     {
@@ -68,6 +128,6 @@ public class OptimizedGrid : AbstractMesh
         vertices = SetVertices(figures, length);
         triangles = SetTriangles(figures);
         SetMesh();
-       
     }
+   
 }

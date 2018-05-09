@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{3B4C40DF-AFC6-816E-EBC2-5AAA75FA2114}</ProjectGuid>
+    <ProjectGuid>{D15F60C3-0F4F-BCE8-7958-38067EC954C5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -53,9 +53,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AbstractMesh.cs" />
      <Compile Include="Assets\Scripts\OptimizedGrid.cs" />
-     <Compile Include="Assets\Scripts\OptimizedMesh.cs" />
+     <Compile Include="Assets\Scripts\TutorialMesh.cs" />
  <Reference Include="com.unity.package-manager-ui.Editor">
- <HintPath>F:/AiProjectUnity/Procedural Meshes/Library/ScriptAssemblies/com.unity.package-manager-ui.Editor.dll</HintPath>
+ <HintPath>F:/AiProjectUnity/Procedural Meshes/ProceduralMeshes/Library/ScriptAssemblies/com.unity.package-manager-ui.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>E:/Unity2018.1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -232,7 +232,7 @@
  <HintPath>E:/Unity2018.1/Editor/Data/Managed/Unity.Locator.dll</HintPath>
  </Reference>
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>F:/AiProjectUnity/Procedural Meshes/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>F:/AiProjectUnity/Procedural Meshes/ProceduralMeshes/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="Vuforia.UnityExtensions.Editor">
  <HintPath>E:/Unity2018.1/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Editor/Vuforia.UnityExtensions.Editor.dll</HintPath>

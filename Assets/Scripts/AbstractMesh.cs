@@ -23,6 +23,7 @@ public abstract class AbstractMesh : MonoBehaviour {
         mesh.RecalculateNormals();
         mesh.RecalculateBounds();
         mesh.RecalculateTangents();
+        gameObject.GetComponent<MeshCollider>().sharedMesh = mesh;
     }
     abstract public void GenerateMesh(int figures, float length); 
 
